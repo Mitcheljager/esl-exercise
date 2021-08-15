@@ -1,0 +1,27 @@
+@keyframes loading {
+  from { transform: translateX(-100%) }
+  to { transform: translateX(100%) }
+}
+
+.loading {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  background: var(--bg-dark);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, var(--bg-dark), 10%, var(--bg-content), var(--bg-dark) 90%);
+    background-repeat: no-repeat;
+    animation: loading 1000ms infinite;
+  }
+
+  &--large {
+    aspect-ratio: 1 / 1;
+  }
+}

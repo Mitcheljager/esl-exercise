@@ -11,7 +11,7 @@ export default function Header(props: any) {
 
   const { data, loading, error } = GetApi("/contestants")
   
-  if (loading) return <div>Loading...</div>
+  if (loading) return <div className="loading"></div>
   if (error) return <div>Error: { error }</div>
   
   if (data) return (
