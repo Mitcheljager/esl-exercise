@@ -9,6 +9,12 @@ export default function Header(props: any) {
     return contestants.filter((p: Contestant) => p.id == id)[0].name
   }
 
+  const isWinner = (participants: Participant[], participant: Participant): boolean => {
+    const opponent = participants.filter(p => p.id != participant.id)[0]
+
+    return participant.points[0] > opponent.points[0]
+  }
+
   const { data, loading, error } = GetApi("/contestants")
   
   if (loading) return <div className="loading"></div>
@@ -19,7 +25,7 @@ export default function Header(props: any) {
       <div className="item__date">{ formattedTime(props.data.beginAt) }</div>
 
       { props.data.participants.map((participant: Participant) => (
-        <div className="participant" key={ participant.id }>
+        <div className={ `participant ${ isWinner(props.data.participants, participant) ? "participant--winner" : "participant--loser" }` } key={ participant.id }>
           <div className="participant__name">{ participantIdToName(data, participant.id) }</div>
 
           <div className="participant__score">{ participant.points }</div>

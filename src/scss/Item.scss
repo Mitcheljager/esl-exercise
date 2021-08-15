@@ -21,10 +21,23 @@
   padding-left: .5rem;
   border-left: 4px solid currentColor;
   border-radius: var(--border-radius);
+
+  &--winner {
+    border-color: var(--green);
+  }
+
+  &--loser {
+    border-color: var(--red);
+  }
 }
 
 .participant__score {
   text-align: right;
   font-size: 1.25rem;
   line-height: 1em;
+
+  .participant--winner & {
+    font-weight: bold;
+    color: var(--color-text-dark);
+  }
 }
