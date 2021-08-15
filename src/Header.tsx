@@ -10,9 +10,9 @@ export default function Header() {
   if (error) return <div>Error: { error }</div>
 
   return (
-    <div>
-      <div>{ data?.name.full }</div>
-      <div>{ formattedDate(data?.timeline.inProgress.begin || "") }</div>
-    </div>
+    <header className="header">
+      <h1 className="header__title">{ data?.name.full }</h1>
+      <div className="header__date">{ formattedDate(data?.timeline.inProgress.begin || "") }</div>
+    </header>
   )
 }

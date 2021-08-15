@@ -1,0 +1,30 @@
+.item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.item__date {
+  font-size: .85rem;
+  color: var(--color-text-light);
+}
+
+.participant {
+  display: grid;
+  grid-template-columns: auto 2rem;
+  grid-gap: 1rem;
+  align-items: center;
+  margin-top: .75rem;
+  padding-left: .5rem;
+  border-left: 4px solid currentColor;
+  border-radius: var(--border-radius);
+}
+
+.participant__score {
+  text-align: right;
+  font-size: 1.25rem;
+  line-height: 1em;
+}

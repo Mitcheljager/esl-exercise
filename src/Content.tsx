@@ -21,7 +21,7 @@ export default function Header() {
   if (error) return <div>Error: { error }</div>
 
   if (data) return (
-    <div>
+    <div className="content">
       { sortedData(data).map((item: Result) => (
         <Item key={ item.id } data={ item } />
       )) }
