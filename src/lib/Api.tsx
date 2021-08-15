@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const leagueId = 177161
+export const leagueId = 177161 // This would be retrieved in some other way, depending on the implementation of the component.
 export const apiBaseUrl = `https://api.eslgaming.com/play/v1/leagues/${ leagueId }`
 
 export const GetApi = (urlParam = "") => {
