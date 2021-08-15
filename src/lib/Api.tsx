@@ -10,6 +10,7 @@ export const GetApi = (urlParam = "") => {
   
   useEffect(() => {
     const getData = async() => {
+      
       setLoading(true)
       setError(false)
 

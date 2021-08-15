@@ -6,11 +6,11 @@ import "./scss/Item.scss"
 
 export default function Header(props: any) {
   const participantIdToName = (contestants: Contestant[], id: number) => {
-    return contestants.filter((p: Contestant) => p.id == id)[0].name
+    return contestants.filter((p: Contestant) => p.id === id)[0].name
   }
 
   const isWinner = (participants: Participant[], participant: Participant): boolean => {
-    const opponent = participants.filter(p => p.id != participant.id)[0]
+    const opponent = participants.filter(p => p.id !== participant.id)[0]
 
     return participant.points[0] > opponent.points[0]
   }
