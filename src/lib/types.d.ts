@@ -1,15 +1,15 @@
-interface Name {
+type Name = {
   full: string
   normal: string
   short: string
 }
 
-interface Dates {
+type Dates = {
   begin: string
   end: string
 } 
 
-interface Timeline {
+type Timeline = {
   signUp: Dates
   inProgress: Dates
   finished: Dates
@@ -17,8 +17,29 @@ interface Timeline {
   lateSignUp: Dates
 }
 
+export type Contestant = {
+  id: number
+  seed: number
+  status: string
+  alias: string
+  name: string
+  region?: string
+}
+
+export type Participant = {
+  id: number
+  place: number
+  points: number[]
+}
+
 export type League = {
   name: Name
   timeline: Timeline
+  [key: string]: any
+}
+
+export type Result = {
+  participants: Participant[]
+  beginAt: string
   [key: string]: any
 }

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 
-import type { League } from "./types"
-
 export const leagueId = 177161
 export const apiBaseUrl = `https://api.eslgaming.com/play/v1/leagues/${ leagueId }`
 
-export const GetApi = () => {
+export const GetApi = (urlParam = "") => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
-  const [data, setData] = useState<League | null>(null)
+  const [data, setData] = useState<any>(null)
   
   useEffect(() => {
     const getData = async() => {
@@ -16,7 +14,7 @@ export const GetApi = () => {
       setError(false)
 
       try {
-        const response = await fetch(apiBaseUrl)
+        const response = await fetch(apiBaseUrl + urlParam)
         const data = await response.json()
         
         setData(data)
